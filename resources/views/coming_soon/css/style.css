@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-image: url(../img/background.png);
+  background-size: cover;
+  margin: 0;
+  font-family: 'ZCOOL QingKe HuangYou', cursive; 
+  color: #fff;
+  background-color: rgb(199, 199, 199);
+  overflow: hidden;
+}
+
+h1{
+  font-weight:400;
+  font-size:35pt;
+  color:#08377B;
+
+}
+
+p{font-weight:300;}
+
+.warning-content {
+	position:absolute;
+  width:100%;
+  height:300px;
+  text-align:center;
+  margin:0;
+  top : 15%
+  
+  
+}
+
+.logo {
+  width: 20%;
+  margin-top: 50px;
+}
+
+.landing-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  text-align: center;
+  padding-top: 50px;
+}
+
+.landing {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.landing h1 {
+  font-size: 50px;
+}
+
+.landing p {
+  font-size: 20px;
+}
+
+.countdown {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: -10%;
+}
+
+.countdown div {
+  padding: 20px;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  background: #08377B;
+  opacity: 0.9;
+  margin: 5px;
+}
+
+.countdown div:first-child {
+  background: #8ec63f;
+  opacity: 0.9;
+}
+
+.countdown span {
+  display: block;
+  font-size: 25px;
+}
+
+@media (max-width: 650px) {
+  .landing img {
+    width: 70%;
+  }
+
+  .landing h1 {
+    font-size: 40px;
+  }
+
+  .countdown {
+    font-size: 30px;
+    flex-direction: column;
+  }
+
+  .countdown div {
+    display: none;
+  }
+
+  .countdown div:first-child {
+    display: block;
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+
+@media (max-height: 600px) {
+  img {
+    width: 20%;
+  }
+
+  p {
+    display: none;
+  }
+}
+
+@media (max-height: 400px) {
+   img {
+    padding-bottom: 30px;
+  }
+  
+  h1 {
+    display: none;
+  }
+}
+
+.footer { 
+  
+  position: absolute;
+  bottom: 0;
+  color: #08377B;
+  
+
+}
