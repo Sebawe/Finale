@@ -55,7 +55,7 @@
 					</div>
 					<div class="modal-footer p-3">
 							<button type="button" class="btn btn-secondary bg-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" name="new" class="btn btn-primary bg-success">Save changes</button>
+							<button  type="submit" name="new" class="btn btn-primary bg-success">Save changes</button>
 					</div>
 				</form>
 			</div>
@@ -106,8 +106,8 @@
 					style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black;"></a>
 				
 					
-				<button type="submit" class="fa fa-trash-o p-1 bg-danger"
-					style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black;" data-toggle="modal" data-target="#delete"></button>
+				<p type="submit" class="fa fa-trash-o p-1 bg-danger"
+					style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black; text-align:center;" data-toggle="modal" data-target="#delete" ></p>
 				
 					<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete"
 					aria-hidden="true">
