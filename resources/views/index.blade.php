@@ -84,7 +84,7 @@
                     <li><a href="#works" title="المنتجات">Products</a></li>
                     <li><a href="#team" title="الماركات">Brands</a></li>
                     <li><a href="#contact" title="تواصل معنا">Contact</a></li>
-                    <li><a href="maintenance/index.html" title="الصيانة">Maintenance</a></li>
+                    <li><a href="/maintenance" title="الصيانة">Maintenance</a></li>
                     <li><a href="https://www.facebook.com/MegaJO" class="fa fa-facebook" target="_blank"></a>
                     </li>
                     <li><a href="tel:079-130-3421" class="fa fa-phone"> <span class="phone">(06) 568 0585 </span></a></li>
@@ -180,7 +180,7 @@
                             <li><a href="javascript:;" data-filter=".desktops" class="filter">Desktops</a></li>
                             <li><a href="javascript:;" data-filter=".printers" class="filter">Printers</a></li>
                             <li><a href="javascript:;" data-filter=".monitors" class="filter">Monitors</a></li>
-                            <li><a href="products/index.html" class="filter" target="_blank">See More</a></li>
+                            <li><a href="/products" data-filter="all" class="filter" target="_blank">See More</a></li>
                         </ul>
                     </div>
     
@@ -305,7 +305,7 @@
                 </figure>
                 
                     <figure class="mix work-item monitors laptops printers desktops">
-                            <a href="products/index.html"  title="See More" class="see-more" target="_blank">
+                            <a href="/products"  title="See More" class="see-more" target="_blank">
                         <img src="img/works/see-more.png" alt="">
                     </a>
                 </figure>
@@ -554,7 +554,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInDown animated p-0" data-wow-duration="500ms"
                     data-wow-delay="300ms">
                     <div class="contact-form">
-                        <form action="#" id="contact-form w-100">
+                        <form method="POST" action="/" id="contact-form w-100">
+                            {{ csrf_field() }}
                             <div class="input-group name-email">
                                 <div class="input-field">
                                     <input type="text" name="name" id="name" placeholder="Name" class="form-control">
@@ -571,6 +572,8 @@
                             <div class="input-group" style="">
                                 <input type="submit" id="form-submit" class="pull-right" value="Send message">
                             </div>
+                            
+                            
                         </form>
                     </div>
                 </div>

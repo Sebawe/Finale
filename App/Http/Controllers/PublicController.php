@@ -21,4 +21,17 @@ class PublicController extends Controller
     {
         return view('index');
     }
+
+    public function store() {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+    }
+
+    public function maintenance()
+    {
+        return view('maintenance.index');
+    }
 }

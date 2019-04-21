@@ -90,8 +90,8 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="box-shadow: 0px 4px 3px;">
-		<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+		<div class="container my-0">
 			<a class="navbar-brand" href="#">Mega Jordan</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -154,7 +154,7 @@
 						onclick="filterSelection('accessory');return false;">Accessories</a>
 				</div>
 
-			</div>"
+			</div>
 			<!-- /.col-lg-3 -->
 
 			<div class="col-lg-9" style="max-width: 74%;">

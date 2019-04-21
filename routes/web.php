@@ -18,7 +18,7 @@ Route::resource('products', 'product');
 Route::get('admin', 'PublicController@admin');
 //I love myself
 Route::get('/', 'PublicController@home');
+Route::post('/', 'PublicController@store');
 
-// Route::get('/products', 'PageController@products');
-// Route::get('/products/laptops', 'PageController@products1');
+Route::get('/maintenance', 'PublicController@maintenance');
 
