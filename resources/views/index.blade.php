@@ -29,6 +29,8 @@
     <!-- CSS
 		================================================== -->
     <!-- Fontawesome Icon font -->
+
+    
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Twitter Bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -109,13 +111,6 @@
 
             <!-- Indicators bullet -->
            
-
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-
-            </ol>
             <!-- End Indicators bullet -->
 
             <!-- Wrapper for slides -->
@@ -525,6 +520,134 @@
     <!--
         End Some fun facts
         ==================================== -->
+        <section class="bg-light" id="team">
+            <div class="container">
+              <div class="row">
+                <div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+                    <h2>Our Team</h2>
+                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-sm-3 text-center wow fadeInUp animated"
+                data-wow-duration="500ms" data-wow-delay="900ms">
+                  <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" style=" width: 150px;
+                    height: 150px;
+                    border: 7px solid #fff;
+                    border-radius: 50%">
+                    <h4 class="team-name">Kay Garland</h4>
+                    <p class="text-muted">Lead Designer</p>
+                    <ul class="list-inline social-buttons">
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp animated"
+                data-wow-duration="500ms" data-wow-delay="1000ms"">
+                  <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="" style=" width: 150px;
+                    height: 150px;
+                    border: 7px solid #fff;
+                    border-radius: 50%"
+                    >
+                    <h4 class="team-name">Larry Parker</h4>
+                    <p class="text-muted">Lead Marketer</p>
+                    <ul class="list-inline social-buttons">
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp animated"
+                data-wow-duration="500ms" data-wow-delay="1100ms"">
+                  <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style=" width: 150px;
+                    height: 150px;
+                    border: 7px solid #fff;
+                    border-radius: 50%">
+                    <h4 class="team-name">Diana Pertersen</h4>
+                    <p class="text-muted">Lead Developer</p>
+                    <ul class="list-inline social-buttons">
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp animated"
+                data-wow-duration="500ms" data-wow-delay="1100ms"">
+                  <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style=" width: 150px;
+                    height: 150px;
+                    border: 7px solid #fff;
+                    border-radius: 50%">
+                    <h4 class="team-name">Diana Pertersen</h4>
+                    <p class="text-muted">Lead Developer</p>
+                    <ul class="list-inline social-buttons">
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+       
+              </div>
+              
+            </div>
+          </section>
 
 
     <!--
@@ -757,6 +880,8 @@
                 }
             });
         });
+
+        
     </script>
 </body>
 
