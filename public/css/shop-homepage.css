@@ -362,6 +362,11 @@ body {
     /* max-height: 51px !important; */
 }
 
+.navbar-brand
+{
+    /* color: var(--my-green) !important; */
+}
+
 /*scrollbar*/
 
 
