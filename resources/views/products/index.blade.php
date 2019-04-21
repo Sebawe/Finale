@@ -90,9 +90,9 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-		<div class="container my-0">
-			<a class="navbar-brand" href="#">Mega Jordan</a>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0">
+		
+			<a class="navbar-brand p-0 h-100" href="#">Mega Jordan</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,22 +101,19 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="../index.html">Home
+						<a class="nav-link" href="/">Home
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="/maintenance">Maintenance</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Maintenance</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Contact</a>
+						<a class="nav-link" href="/#contact">Contact</a>
 					</li>
 				</ul>
 			</div>
-		</div>
+		
 	</nav>
 
 	<!-- Page Content -->
@@ -124,7 +121,7 @@
 
 		<div class="row">
 
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-md-12 col-xs-12">
 
 				<br>
 				<br>
@@ -157,7 +154,7 @@
 			</div>
 			<!-- /.col-lg-3 -->
 
-			<div class="col-lg-9" style="max-width: 74%;">
+			<div class="col-lg-9 col-md-10 col-sm-11 col-xs-12 mx-auto">
 
 				<div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel">
 					<div class="blog-slider">

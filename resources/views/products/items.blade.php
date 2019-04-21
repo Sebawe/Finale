@@ -6,7 +6,7 @@
 <div class="col-lg-4 col-md-6 mb-4 filterDiv {{$item->category}}s" data-toggle="modal"
 data-target="#modal{{$item->id}}">
 <div class="card mycard h-100">
-    <a href="#" class="w-100" style="height:250px;overflow:hidden"><img class="card-img-top" src="{{Storage::url($item->id) .'?'. time()}}" alt=""></a>
+    <a href="#" class="w-100" style="height:253px;overflow:hidden"><img class="card-img-top" src="{{Storage::url($item->id) .'?'. time()}}" alt=""></a>
     <div class="card-body">
         <h4 class="card-title">
             <a href="#">{{$item->title}}</a>
