@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Products;
-// use App\Product;
+use App\Categories;
 class Product extends Controller
 {
     /**
@@ -18,7 +18,8 @@ class Product extends Controller
     {
         
         $product = Products::all();
-        return view('products.items', compact('product'));
+        $category = Categories::all();
+        return view('products.items', compact('product', 'category'));
         
     }
 
@@ -56,7 +57,7 @@ class Product extends Controller
             $product->file->storeAs('public', $product->id);
         }
 
-        return redirect('products');
+        return redirect('admin');
         
     }
 
@@ -129,7 +130,7 @@ class Product extends Controller
     {
         Products::find($id)->delete();
         DB::table('products')->decrement('id');
-        return redirect('/products');
+        return redirect('admin');
     }
 
 

@@ -19,7 +19,7 @@ body {
   overflow-x: hidden !important;
 }
 span {
-  font-family: "ZCOOL QingKe HuangYou"
+  /* font-family: "ZCOOL QingKe HuangYou" */
 }
 .phone { 
   font-size: 18px;
@@ -38,7 +38,9 @@ ol,
 ul {
   margin: 0;
   padding: 0;
+  display: flow-root;
   list-style: none;
+  justify-content: center;
 }
 
 figure,
@@ -234,9 +236,10 @@ body>section,
 ==========================================*/
 
 .lap-logo{
- margin: 10% 0 0 10%;
- width:500px; 
+ margin: 10% 0 0 5%;
+  width: 50%;
 }
+
 .carousel-item {
   height: 65vh;
   min-height: 300px;
@@ -340,8 +343,14 @@ body>section,
 .info-sec {
 
     background: linear-gradient(to bottom, #f4f7f9 0%, #ffffff 41%);
+    margin-bottom: 0px;
 
 
+}
+
+.info-sec > .container
+{
+  margin-bottom: 50px;
 }
 
 .info {
@@ -413,17 +422,23 @@ body>section,
     .logo-text {
         color: wheat;
     }
- .mydiv {
-  
-   
- }
+    .mydiv {
+        width: 100% !important;
+      
+    }
  .mydiv > h1 {
    font-size : 3.5rem !important;
    font-weight: 100 !important;
  }
  .mycard {
-  overflow: hidden !important ; 
+  overflow: hidden !important ;
+  width: 100%;
   }
+  
+.lap-logo{
+  margin: 50% 0 0 5%;
+   width: 90%;
+ }
 
  }
     
@@ -698,7 +713,10 @@ body>section,
 	Our Team Member
 ==========================================*/
 
+#team
+{
 
+}
 .member-thumb {
   width: 150px;
   position: relative;
@@ -805,6 +823,8 @@ ul.social-buttons li a {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
+  margin-bottom: 200px;
+  min-height: 300px;
 }
 
 .facts .devider:before,

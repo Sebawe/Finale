@@ -92,7 +92,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0">
 		
-			<a class="navbar-brand p-0 h-100" href="#">Mega Jordan</a>
+			<a class="navbar-brand p-0 h-100" href="/">Mega Jordan</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

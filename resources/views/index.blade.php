@@ -25,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    
 
     <!-- CSS
 		================================================== -->
@@ -137,15 +138,11 @@
             </div>
 
             <a class="left arrow2 carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-<span class="sr-only">Previous</span>
+                <i class="fa fa-angle-left fa-3x"></i>
               </a>
-              <a class="right arrow1 carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-                
+              <a class="right arrow1 carousel-control-prev" href="#myCarousel" role="button" data-slide="next">
+              <i class="fa fa-angle-right fa-3x"></i>
               </a>
-
 
 
             <!-- end single slide -->
@@ -498,14 +495,14 @@
         ==================================== -->
 
     <section id="facts" class="facts">
-        <div class="parallax-overlay ">
         
-                <div class = "row" style="padding: 0%; display: flex;">
+        
+                
                     <div class="col-lg-6 col-md-8 mycard d-flex" style = "background: url(img/works/security-slider-image-cropped-2.jpg);  ">
                        
                         
                         <div class="mydiv d-flex" style = "justify-content:center">
-                            <h1><strong>Security Cameras</strong></h1>
+                            <h1><strong>Services</strong></h1>
                         </div>
                     </div>
                   
@@ -517,13 +514,13 @@
                     </div>
                 
         
-                </div>
+                
     </section>
-
+<br>
     <!--
         End Some fun facts
         ==================================== -->
-        <section class="bg-light" id="team">
+        <section class="bg-light" id="ourteam">
             <div class="container">
               <div class="row">
                 <div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
@@ -684,16 +681,16 @@
                             {{ csrf_field() }}
                             <div class="input-group name-email">
                                 <div class="input-field">
-                                    <input type="text" name="name" id="name" placeholder="Name" class="form-control">
+                                    <input type="text" name="name" id="name" placeholder="Name" class="form-control" required="true">
                                 </div>
                                 <div class="input-field">
-                                    <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                                    <input type="email" name="email" id="email" placeholder="Email" class="form-control" required="true">
                                 </div>
                             </div>
                             <br>
                             <br>
                             <div class="input-group">
-                                <textarea name="message" id="message" placeholder="Message" class="form-control" style = "height: 100px"></textarea>
+                                <textarea name="message" id="message" placeholder="Message" class="form-control" style = "height: 100px" required="true"></textarea>
                             </div>
                             <div class="input-group" style="">
                                 <input type="submit" id="form-submit" class="pull-right" value="Send message">
