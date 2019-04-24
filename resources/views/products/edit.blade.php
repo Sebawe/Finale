@@ -22,15 +22,9 @@
 				<div class="form-group">
 					<label for="exampleFormControlSelect1">Category</label>
 					<select class="form-control" name="category" id="exampleFormControlSelect1">
-						<option>Desktop</option>
-							<option>Laptop</option>
-							<option>Printer</option>
-							<option>UPS</option>
-							<option>Cabinet</option>
-							<option>Storage</option>
-							<option>Cable</option>
-							<option>Toner</option>
-							<option>Accessory</option>
+						@foreach ($category as $c)
+								<option>{{$c->name}}</option>
+						@endforeach
 					</select>
 				</div>
 
@@ -38,9 +32,27 @@
 					<label for="exampleFormControlTextarea1">Description</label>
 					<textarea class="form-control" name="description" id="exampleFormControlTextarea1" value="" rows="2">{{$product->description}}</textarea>
 				</div>
-				<div class="form-group">
+				<div class="d-flex justify-content-start">
+				<div class="form-group d-flex justify-content-start">
 					<label for="exampleFormControlInput1">Price</label>
-					<input type="number" name="price" class="form-control w-25" id="exampleFormControlInput1" value="{{$product->price}}" placeholder="JD">
+					<input type="number" name="price" class="form-control w-50 ml-4" id="exampleFormControlInput1" value="{{$product->price}}" placeholder="JD">
+				</div>
+				<div class="form-group mx-3">
+						<label for="hot">Hot item</label>
+						<input 
+							@if($product->hot == 1)
+								checked
+							@endif
+						 name="hot" type="checkbox" value="yes">
+					</div>
+					<div class="form-group mx-3">
+						<label for="slider">Slider item</label>
+						<input 
+							@if($product->slider == 1)
+								checked
+							@endif
+						 name="slider" type="checkbox" value="yes">
+					</div>
 				</div>
 				<div class="form-group">
 					<label for="exampleFormControlFile1">Upload an Image</label>
@@ -49,7 +61,7 @@
 				<div class="modal-footer p-3">
 					
 					<form action="/products">
-						<button type="submit" href="/products" class="btn btn-secondary bg-secondary">Close</button>
+						<button type="submit" href="/admin" class="btn btn-secondary bg-secondary">Close</button>
 					</form>
 					<button type="submit" name="edit" class="btn btn-primary bg-success">Save changes</button>
 				</div>

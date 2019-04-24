@@ -1,9 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use App\Products;
+use App\Categories;
 class CategoryController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +36,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Categories();
+        $category->name = request('category');
+        $category->save();
+
+        return redirect('admin');
     }
 
     /**
@@ -79,6 +85,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Categories::find($id)->delete();
+        DB::table('categories')->decrement('id');
+        return redirect('admin');
     }
 }

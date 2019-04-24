@@ -129,26 +129,11 @@
 				<div class="list-group">
 					<a class="list-group-item" title="All" href="#"
 						onclick="filterSelection('all');return false;">All</a>
-					<a class="list-group-item" title="Desktops" href="#"
-						onclick="filterSelection('desktop');return false;">Desktops</a>
-					<a class="list-group-item" title="Laptops" href="#"
-						onclick="filterSelection('laptop');return false;">Laptops</a>
-					<a class="list-group-item" title="Printers" href="#"
-						onclick="filterSelection('printer');return false;">Printers</a>
-					<a class="list-group-item" title="Monitors" href="#"
-						onclick="filterSelection('monitor');return false;">Monitors</a>
-					<a class="list-group-item" title="UPS" href="#"
-						onclick="filterSelection('ups');return false;">UPS</a>
-					<a class="list-group-item" title="Cabinets" href="#"
-						onclick="filterSelection('cabinets');return false;">Cabinets</a>
-					<a class="list-group-item" title="Storage" href="#"
-						onclick="filterSelection('storage');return false;">Storage</a>
-					<a class="list-group-item" title="Cables" href="#"
-						onclick="filterSelection('cable');return false;">Cables</a>
-					<a class="list-group-item" title="Toners" href="#"
-						onclick="filterSelection('toner');return false;">Toners</a>
-					<a class="list-group-item" title="Accessories" href="#"
-						onclick="filterSelection('accessory');return false;">Accessories</a>
+					@foreach ($category as $c)
+						<a class="list-group-item" title="{{$c->name}}" href="#"
+						onclick="filterSelection('{{strtolower($c->name)}}');return false;">{{$c->name}}</a>	
+					@endforeach
+					
 				</div>
 
 			</div>

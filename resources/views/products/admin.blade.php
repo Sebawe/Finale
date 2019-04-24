@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Products</title>
+	<title>@yield('title')</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -75,7 +75,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="box-shadow: 0px 4px 3px;">
 		<div class="container">
-			<a class="navbar-brand" href="#">Mega Jordan</a>
+			<a class="navbar-brand" href="/">Mega Jordan</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

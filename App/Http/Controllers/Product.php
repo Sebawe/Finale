@@ -50,6 +50,18 @@ class Product extends Controller
         $product->price = request('price');
         $product->file = request('file');
         
+        // My checkbox hot value
+        $my_hot_value = $request['hot'];
+        if($my_hot_value === 'yes')
+            $product->hot = 1;
+        else
+            $product->hot = 0;
+        // My checkbox slider value
+        $my_slider_value = $request['slider'];
+        if($my_slider_value === 'yes')
+            $product->slider = 1;
+        else
+            $product->slider = 0;
         
         $product->save();
         //You must save before uploading the picture
@@ -82,9 +94,9 @@ class Product extends Controller
     {
         
         $product = Products::find($id);
+        $category = Categories::all();
+        return view('products.edit', compact('product', 'category'));
         
-        return view('products.edit', compact('product'));
-        dd($product);
     }
 
     /**
@@ -97,25 +109,29 @@ class Product extends Controller
     public function update(Request $request, $id)
     {
         $product = Products::find($id);
-        
-        
         $product->title = request('title');
         $product->category = request('category');
         $product->description = request('description');
         $product->price = request('price');
         $product->file = request('file');
-        
-        if($request->hasFile('file')){
+        $my_hot_value = $request['hot'];
+        if($my_hot_value === 'yes')
+            $product->hot = 1;
+        else
+            $product->hot = 0;
+        // My checkbox slider value
+        $my_slider_value = $request['slider'];
+        if($my_slider_value === 'yes')
+            $product->slider = 1;
+        else
+            $product->slider = 0;
+        if($request->hasFile('file'))
+        {
             $product->file->storeAs('public', $product->id);
         }
-        
-        
-        $product->save();
-        
-        
 
-        return redirect('products#');
-        dd('teds');
+        $product->save();
+        return redirect('admin');
 
         
     }

@@ -6,7 +6,7 @@
 Route::resource('products', 'product');
 
 //All category routes
-Route::resource('admin', 'category');
+Route::resource('admin', 'CategoryController');
 //Get me the admin page
 Route::get('admin', 'PublicController@admin');
 

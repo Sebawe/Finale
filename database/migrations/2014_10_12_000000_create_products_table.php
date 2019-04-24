@@ -20,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->integer('price');
             $table->mediumText('file')->nullable();
+            $table->boolean('hot');
+            $table->boolean('slider');
             $table->rememberToken();
             $table->timestamps();
         });
