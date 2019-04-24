@@ -21,7 +21,8 @@ class PublicController extends Controller
 
     public function home()
     {
-        return view('index');
+        $product = Products::all()->where('hot', 1);
+        return view('index', compact('product'));
     }
 
     public function store() {

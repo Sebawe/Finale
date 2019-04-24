@@ -15,9 +15,7 @@
     <!-- Page Title -->
     <title>Mega Jordan</title>
     <!-- Meta Description -->
-    <meta name="description" content="Blue One Page Creative HTML5 Template">
-    <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
-    <meta name="author" content="Muhammad Morshed">
+    
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -183,127 +181,53 @@
             </div>
     
             <div class="project-wrapper" id="style-7">
-    
-                <figure class="mix work-item laptops">
-                    <img src="img/works/legion-1.jpg" alt="">
-                    <figcaption class = "overlay">
-                        <a class="fancybox" rel="works" title="FX504 15.6” 120Hz 3ms Full HD, Intel Core i7-8750H Processor, GeForce GTX 1060 6GB, <br> 16GB DDR4, 256GB PCIe SSD + 1TB HDD, Gigabit WiFi, Windows 10 Home" href="img/works/legion-12.jpg"><i class="fa fa-eye fa-lg"></i> </a>
-                        <h4>ASUS TUF Gaming Laptop  - FX504GM-ES74</h4>
-                        <p>FX504 15.6” 120Hz 3ms Full HD, Intel Core i7-8750H Processor, GeForce GTX 1060 6GB, 16GB DDR4, 256GB PCIe SSD + 1TB HDD, Gigabit WiFi, Windows 10 Home</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item monitors">
-                    <img src="img/works/alienware-1.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/alienware-1.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item laptops">
-                    <img src="img/works/1301-1200x1200.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/1301-1200x1200.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item laptops">
-                    <img src="img/works/spectre.png" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/spectre.png"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item printers">
-                    <img src="img/works/printer.png" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/printer.png"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item desktops">
-                    <img src="img/works/desktop.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/desktop.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-                <figure class="mix work-item printers ">
-                    <img src="img/works/cam.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/cam.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-    
-               <figure class="mix work-item">
-                    <img src="img/works/WD.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/WD.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="mix work-item printers">
-                    <img src="img/works/ink.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/ink.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="mix work-item monitors">
-                    <img src="img/works/monitor.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/monitor.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="mix work-item laptops">
-                    <img src="img/works/laptop.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/laptop.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="mix work-item desktops">
-                    <img src="img/works/desktop2.jpg" alt="">
-                    <figcaption class="overlay">
-                        <a class="fancybox" rel="works" title="Write Your Image Caption Here" href="img/works/desktop2.jpg"><i
-                                class="fa fa-eye fa-lg"></i></a>
-                        <h4>Labore et dolore magnam</h4>
-                        <p>Photography</p>
-                    </figcaption>
-                </figure>
-                
+                @foreach ($product as $i)
+                    <figure class="mix work-item {{$i->category}}">
+                            <img src="{{Storage::url($i->id) .'?'. time()}}" style="object-fit:cover;">
+                            <figcaption class = "overlay">
+                                    <a class="fancybox" rel="works" title="{{$i->title}}"><i class="fa fa-eye fa-lg"></i> </a>
+                                    <h4>{{$i->title}}</h4>
+                                    <p>{{$i->description}}</p>
+                                </figcaption>
+                    </figure>
+
+                    <div class="modal fade" id="modal{{$i->id}}" tabindex="-1" role="dialog"
+                            aria-labelledby="aria{{$i->modal}}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{$i->title}}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card">
+                                            <a href="#"><img class="card-img-top" src="{{Storage::url($i->id) .'?'. time()}}"
+                                                    alt=""></a>
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <a href="#">{{$i->title}}</a>
+                                                </h4>
+                                            <h5>{{$i->price}} JD</h5>
+                                            <p class="card-text">{{$i->description}}</p>
+                                            </div>
+                            
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                            
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                @endforeach
+           
                     <figure class="mix work-item monitors laptops printers desktops">
                             <a href="/products"  title="See More" class="see-more" target="_blank">
                         <img src="img/works/see-more.png" alt="">
                     </a>
-                </figure>
+                    </figure>
             
                 
     
@@ -676,7 +600,7 @@
                 <!-- contact form -->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInDown animated p-0" data-wow-duration="500ms"
                     data-wow-delay="300ms">
-                    <div class="contact-form">
+                    <div class="contact-form" id="contact-form">
                         <form method="POST" action="/" id="contact-form w-100">
                             {{ csrf_field() }}
                             <div class="input-group name-email">
@@ -692,7 +616,7 @@
                             <div class="input-group">
                                 <textarea name="message" id="message" placeholder="Message" class="form-control" style = "height: 100px" required="true"></textarea>
                             </div>
-                            <div class="input-group" style="">
+                            <div class="input-group" style="margin-top:20px;">
                                 <input type="submit" id="form-submit" class="pull-right" value="Send message">
                             </div>
                             
@@ -796,7 +720,7 @@
     <!-- Twitter Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <!-- jquery.fancybox.pack -->
-    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="/js/jquery.fancybox.pack.js"></script>
     <!-- jquery.mixitup.min -->
     <script src="js/jquery.mixitup.min.js"></script>
     <!-- jquery.parallax -->

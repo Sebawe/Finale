@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head style = "height: 100%;">
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,38 +72,31 @@
 
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="box-shadow: 0px 4px 3px;">
-		<div class="container">
-			<a class="navbar-brand" href="/">Mega Jordan</a>
-
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="/">Home
-							<span class="sr-only">(current)</span>
-						</a>
-                    </li>
-                    <li class="nav-item active">
-						<a class="nav-link" href="">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" style="box-shadow: 0px 4px 3px;">
+		
+				<a class="navbar-brand p-0 h-100" href="/">Mega Jordan</a>
+	
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active" mx-3>
+							<a class="nav-link" href="/">Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item mx-3">
+								<a class="nav-link" href="/products">Products</a>
+						</li>
 							
-						</a>
-					</li>
-                    <li class="nav-item active">
-						<a class="nav-link" href="/products">Products
-							<span class="sr-only">(current)</span>
-						</a>
-                    </li>
-                   
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
+						
+					</ul>
+				</div>
+			
+		</nav>
+	
 
 	<!-- Page Content -->
 	<div class="container"style="overflow:visible;">
@@ -128,9 +121,12 @@
 	</div>
 	<!-- /.container -->
 
-
-	<!-- Footer -->
-
+	<footer class="footer fixed-bottom d-flex">
+			<p class="mx-auto my-1" href="#">Designed by <a class="text-success" href="http://freelancer.com/u/Sebawe">Sebawe Syaj</a></p>
+	</footer>
+			
+		
+	
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="/js/jquery/jquery.min.js"></script>

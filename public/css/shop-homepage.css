@@ -27,6 +27,7 @@ body {
     min-height: 100vh;
     font-family: "Fira Sans", sans-serif;
     display: flex;
+    flex-direction: column;
 }
 
 .blog-slider {
@@ -352,9 +353,6 @@ body {
 }
 
 
-.footer {
-    width: ;
-}
 
 .navbar {
     background: var(--my-blue);
@@ -420,7 +418,6 @@ body {
 
 .footer {
   background-color: var(--my-blue);
-  border-top: 5px solid #062033;
   color: #fff;
 }
 
