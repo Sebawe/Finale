@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Products;
 use App\Categories;
+use App\Brands;
+use App\Teamers;
 class Product extends Controller
 {
     /**
@@ -18,8 +20,14 @@ class Product extends Controller
     {
         
         $product = Products::all();
+        $slider = Products::where('slider', 1)
+        ->orderBy('id')
+        ->take(5)
+        ->get();
         $category = Categories::all();
-        return view('products.items', compact('product', 'category'));
+        $brand = Brands::all();
+        $team = Teamers::all();
+        return view('products.items', compact('product', 'category', 'brand', 'team', 'slider'));
         
     }
 
@@ -49,7 +57,7 @@ class Product extends Controller
         $product->description = request('description');
         $product->price = request('price');
         $product->file = request('file');
-        
+        $product->brand = request('brand');
         // My checkbox hot value
         $my_hot_value = $request['hot'];
         if($my_hot_value === 'yes')
@@ -95,7 +103,8 @@ class Product extends Controller
         
         $product = Products::find($id);
         $category = Categories::all();
-        return view('products.edit', compact('product', 'category'));
+        $brand = Brands::all();
+        return view('products.edit', compact('product', 'category', 'brand'));
         
     }
 
@@ -112,6 +121,7 @@ class Product extends Controller
         $product->title = request('title');
         $product->category = request('category');
         $product->description = request('description');
+        $product->brand = request('brand');
         $product->price = request('price');
         $product->file = request('file');
         $my_hot_value = $request['hot'];
@@ -145,7 +155,7 @@ class Product extends Controller
     public function destroy($id)
     {
         Products::find($id)->delete();
-        DB::table('products')->decrement('id');
+        DB::table('products')->update(['id' => DB::raw('GREATEST(id - 1, 0)')]);
         return redirect('admin');
     }
 

@@ -182,10 +182,10 @@
     
             <div class="project-wrapper" id="style-7">
                 @foreach ($product as $i)
-                    <figure class="mix work-item {{$i->category}}">
+                    <figure class="mix work-item {{$i->category}}" data-toggle="modal" data-target="#modal{{$i->id}}">
                             <img src="{{Storage::url($i->id) .'?'. time()}}" style="object-fit:cover;">
                             <figcaption class = "overlay">
-                                    <a class="fancybox" rel="works" title="{{$i->title}}"><i class="fa fa-eye fa-lg"></i> </a>
+                                    <a class="" rel="works" title="{{$i->title}}"><i class="fa fa-eye fa-lg"></i> </a>
                                     <h4>{{$i->title}}</h4>
                                     <p>{{$i->description}}</p>
                                 </figcaption>
@@ -196,21 +196,22 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">{{$i->title}}</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                    <h3 class="modal-title" id="exampleModalLabel" style="color:black">{{$i->title}}</h3>
+                                        
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" style="color:black">
                                         <div class="card">
-                                            <a href="#"><img class="card-img-top" src="{{Storage::url($i->id) .'?'. time()}}"
-                                                    alt=""></a>
+                                            <img class="mx-auto" style="max-width: 380px; display:block; margin-right:auto;margin-left:auto;" src="{{Storage::url($i->id) .'?'. time()}}"
+                                                    alt="">
                                             <div class="card-body">
-                                                <h4 class="card-title">
+                                                <h3 class="card-title">
                                                     <a href="#">{{$i->title}}</a>
-                                                </h4>
-                                            <h5>{{$i->price}} JD</h5>
-                                            <p class="card-text">{{$i->description}}</p>
+                                                </h3>
+                                            <h2>{{$i->price}} JD</h2>
+                                            <h2 class="card-text" style="font-family: monospace: color:black;">{{$i->description}}</h2>
                                             </div>
                             
                                         </div>
@@ -278,134 +279,16 @@
                     </div>
     
                     <!-- single member -->
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms" data-wow-delay="300ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/lenovo-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-                    <!-- end single member -->
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms" data-wow-delay="400ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/dell-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms" data-wow-delay="500ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/toshiba-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="member-thumb">
-                        <img src="img/logos/wd-logo.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-
-                            <ul class="social-links text-center">
-                                <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-
-                </figure>
+                    @foreach ($brand as $x)
+                        <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
+                        data-wow-duration="500ms" data-wow-delay="{{400 + (100 * number_format($x->id))}}ms">
+                            <div class="member-thumb">
+                                <img src="{{asset("storage/brands/$x->name").'?'. time()}}" style="max-width:90%" alt="Team Member" class="">
+                            </div>
+                        </figure>
+                    @endforeach
                     
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="700ms" data-wow-delay="700ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/hp-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-    
-                    <!-- single member -->
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms" data-wow-delay="800ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/tplink-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-                    <!-- end single member -->
-                    <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms" data-wow-delay="900ms">
-                        <div class="member-thumb">
-                            <img src="img/logos/sony-logo.png" alt="Team Member" class="img-responsive">
-                            <figcaption class="overlay">
-    
-                                <ul class="social-links text-center">
-                                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </div>
-    
-                    </figure>
-                    
-                <figure class="team-member col-md-1 col-sm-6 col-xs-6 text-center wow fadeInUp animated"
-                data-wow-duration="500ms" data-wow-delay="1000ms">
-                <div class="member-thumb">
-                    <img src="img/logos/linkcomn-logo.png" alt="Team Member" class="img-responsive">
-                    <figcaption class="overlay">
-
-                        <ul class="social-links text-center">
-                            <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                            <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                        </ul>
-                    </figcaption>
-                </div>
-
-            </figure>
-    
+                  
                 </div>
             </div>
         </section>
@@ -454,119 +337,35 @@
 
               </div>
               <div class="row">
+                @foreach ($team as $x)
                 <div class="col-sm-3 text-center wow fadeInUp animated"
-                data-wow-duration="500ms" data-wow-delay="900ms">
+              data-wow-duration="500ms" data-wow-delay="{{900 + ((number_format($x->id) - 1) * 200)}}ms">
                   <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" style=" width: 150px;
-                    height: 150px;
-                    border: 7px solid #fff;
-                    border-radius: 50%">
-                    <h4 class="team-name">Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
+                        <div class="mx-auto rounded-circle" src="{{asset("storage/teamers/$x->id").'?'. time()}}" alt="" style=" width: 180px;
+                        height: 180px;
+                        border: 7px solid #fff;
+                        border-radius: 50%;
+                        overflow: hidden
+                        ">
+                        <img class="mx-auto rounded-circle" src="{{asset("storage/teamers/$x->id").'?'. time()}}" alt="" width="180" style="position:relative; top: -20%; left:-5%">
+                        </div>
+                    
+                    <h4 class="team-name">{{$x->name}}</h4>
+                    
                     <ul class="list-inline social-buttons">
                       <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
+                        <a href="http://www.{{$x->link}}">
                           <i class="fa fa-facebook"></i>
                         </a>
                       </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-linkedin"></i>
-                        </a>
-                      </li>
+                      
+                      
                     </ul>
                   </div>
                 </div>
-                <div class="col-sm-3 text-center wow fadeInUp animated"
-                data-wow-duration="500ms" data-wow-delay="1000ms"">
-                  <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="" style=" width: 150px;
-                    height: 150px;
-                    border: 7px solid #fff;
-                    border-radius: 50%"
-                    >
-                    <h4 class="team-name">Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
-                    <ul class="list-inline social-buttons">
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-3 text-center wow fadeInUp animated"
-                data-wow-duration="500ms" data-wow-delay="1100ms"">
-                  <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style=" width: 150px;
-                    height: 150px;
-                    border: 7px solid #fff;
-                    border-radius: 50%">
-                    <h4 class="team-name">Diana Pertersen</h4>
-                    <p class="text-muted">Lead Developer</p>
-                    <ul class="list-inline social-buttons">
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-3 text-center wow fadeInUp animated"
-                data-wow-duration="500ms" data-wow-delay="1100ms"">
-                  <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style=" width: 150px;
-                    height: 150px;
-                    border: 7px solid #fff;
-                    border-radius: 50%">
-                    <h4 class="team-name">Diana Pertersen</h4>
-                    <p class="text-muted">Lead Developer</p>
-                    <ul class="list-inline social-buttons">
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                @endforeach
+               
+               
        
               </div>
               

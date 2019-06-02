@@ -35,6 +35,15 @@
 					</div>
 
 					<div class="form-group">
+							<label for="exampleFormControlSelect1">Brand</label>
+							<select class="form-control" name="brand" id="exampleFormControlSelect1">
+								@foreach ($brand as $c)
+									<option>{{$c->name}}</option>
+								@endforeach
+							</select>
+						</div>
+
+					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Description</label>
 						<textarea class="form-control" name="description" id="exampleFormControlTextarea1"
 							rows="4"></textarea>
@@ -130,14 +139,14 @@
 
 				<a type="submit" class="fa fa-trash-o p-1 bg-danger"
 					style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black; text-align:center;"
-					data-toggle="modal" data-target="#delete"></a>
+					data-toggle="modal" data-target="#deleteProduct{{$i->id}}"></a>
 
-				<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete"
+				<div class="modal fade" id="deleteProduct{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteProduct{{$i->id}}"
 					aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="delete">Are you sure ?</h5>
+							<h5 class="modal-title" id="deleteProduct{{$i->id}}">Do you want to delete "{{$i->title}}"?</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -147,7 +156,7 @@
 									{{method_field('DELETE')}}
 									{{ csrf_field() }}
 
-									<button type="submit" name="delete" class="btn btn-primary bg-danger"
+									<button type="submit" name="deleteProduct{{$i->id}}" class="btn btn-primary bg-danger"
 										style="float:right; margin:0 0 0 5px;">Delete</button>
 									<button type="button" class="btn btn-secondary bg-secondary"
 										style="float:right; margin:0 0 0 5px;" data-dismiss="modal">Not sure</button>
@@ -183,11 +192,11 @@
 
 
 {{-- Category Table + Modal --}}
-<table class="table mt-3 col-6" style="border-right: 4px solid white">
+<table class="table mt-3 mx-auto col-4" style="border-right: 4px solid white">
 	<thead class="thead-light">
 		<tr>
 			<th scope="col">#</th>
-			<th scope="col-2">Category</th>
+			<th scope="col-2">Categories</th>
 
 			<th class="d-flex justify-content-end">
 				<button class="btn fa fa-plus d-flex bg-success text-white justify-content-end" data-toggle="modal"
@@ -205,7 +214,7 @@
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							<form method="POST" action="/admin">
+							<form method="POST" action="/category">
 							<div class="modal-body">
 								<input type="text" name="category" class="form-control" id="exampleFormControlInput1"
 							placeholder="Type Here!"> 
@@ -236,30 +245,30 @@
 			<th scope="row">{{$x->id}}</th>
 			<td>{{$x->name}}</td>
 			<td class="justify-content-end d-flex">
-
+				
 				<p type="submit" class="fa fa-trash-o p-1 bg-danger"
 					style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black; text-align:center;"
-					data-toggle="modal" data-target="#deleteCategory"></p>
+					data-toggle="modal" data-target="#deleteCategory{{$x->id}}"></p>
 
-				<div class="modal fade" id="deleteCategory" tabindex="-1" role="dialog" aria-labelledby="deleteCategory"
+				<div class="modal fade" id="deleteCategory{{$x->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteCategory{{$x->id}}"
 					aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="deleteCategory">Are you sure ?</h5>
+								<h5 class="modal-title" id="deleteCategory{{$x->id}}">Do you want to delete "{{$x->name}}" ?</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="modal-body">
-								<form method="POST" action="/admin/{{$x->id}}">
+								<form method="POST" action="/category/{{$x->id}}">
 									{{method_field('DELETE')}}
 									{{ csrf_field() }}
 
 									<button type="submit" name="delete" class="btn btn-primary bg-danger"
 										style="float:right; margin:0 0 0 5px;">Delete</button>
 									<button type="button" class="btn btn-secondary bg-secondary"
-										style="float:right; margin:0 0 0 5px;" data-dismiss="modal">Not sure</button>
+										style="float:right; margin:0 0 0 5px;" data-dismiss="modal">No</button>
 
 								</form>
 							</div>
@@ -295,42 +304,48 @@
 
 
 {{-- Brands Table + Modal --}}
-<table class="table mt-3 col-6">
+<table class="table mt-3 mx-auto col-4" style="border-right: 4px solid white">
 		<thead class="thead-light">
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col-2">Brand</th>
-	
+				<th scope="col-2">Brands</th>
+				<th>Image</th>
 				<th class="d-flex justify-content-end">
 					<button class="btn fa fa-plus d-flex bg-success text-white justify-content-end" data-toggle="modal"
-						data-target="#newCategory">
+						data-target="#newBrand">
 						
 					</button>
 				</th>
-				<div class="modal fade" id="newCategory" tabindex="-1" role="dialog" aria-labelledby="newCategory"
+				<div class="modal fade" id="newBrand" tabindex="-1" role="dialog" aria-labelledby="newBrand"
 						aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="newCategory">Category Name</h5>
+									<h5 class="modal-title" id="newBrand">Add new brand</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form method="POST" action="/admin">
+								<form method="POST" action="/brand" enctype="multipart/form-data">
+									{{ csrf_field() }}
 								<div class="modal-body">
-									<input type="text" name="category" class="form-control" id="exampleFormControlInput1"
+									<div class="form-group">
+									<label for="exampleFormControlFile1">Brand Name</label>
+									<input type="text" name="name" class="form-control" id="exampleFormControlInput1"
 								placeholder="Type Here!"> 
+									</div>
+									<br>
+								<div class="form-group">
+										<label for="exampleFormControlFile1">Upload an Image</label>
+										<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+									</div>
 								</div>
-								<div class="modal-footer">
-									
-										{{ csrf_field() }}
-										<button type="submit" name="submitNewCategory" class="btn btn-primary bg-success"
-											style="float:right; margin:0 0 0 5px;">Submit</button>
-										<button type="button" class="btn btn-secondary bg-secondary"
-											style="float:right; margin:0 0 0 5px;" data-dismiss="modal">Not sure</button>
-	
-									
+
+								
+								<div class="modal-footer p-3">
+										<button type="button" class="btn btn-secondary bg-secondary" data-dismiss="modal">Close</button>
+										<button type="submit" name="new" class="btn btn-primary bg-success">Save changes</button>
+									</div>																	
 								</div>
 							</form>
 							</div>
@@ -342,29 +357,35 @@
 		</thead>
 		<tbody>
 	
-			@foreach ($category as $x)
+			@foreach ($brand as $x)
 	
 			<tr>
 				<th scope="row">{{$x->id}}</th>
 				<td>{{$x->name}}</td>
+				<td style="line-height: 1px;">
+					<div style="width:50px; height:60px">
+						<img src="{{asset("storage/brands/$x->name").'?'. time()}}" alt=""
+							style="width:100%; height:100%; object-fit:cover;">
+					</div>
+				</td>
 				<td class="justify-content-end d-flex">
 	
 					<p type="submit" class="fa fa-trash-o p-1 bg-danger"
 						style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black; text-align:center;"
-						data-toggle="modal" data-target="#deleteCategory"></p>
+						data-toggle="modal" data-target="#deleteBrand{{$x->id}}"></p>
 	
-					<div class="modal fade" id="deleteCategory" tabindex="-1" role="dialog" aria-labelledby="deleteCategory"
+					<div class="modal fade" id="deleteBrand{{$x->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteBrand{{$x->id}}"
 						aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="deleteCategory">Are you sure ?</h5>
+								<h5 class="modal-title" id="deleteBrand{{$x->id}}">Do you want to delete "{{$x->name}}" ?</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									<form method="POST" action="/admin/{{$x->id}}">
+									<form method="POST" action="/brand/{{$x->id}}">
 										{{method_field('DELETE')}}
 										{{ csrf_field() }}
 	
@@ -380,6 +401,9 @@
 						</div>
 					</div>
 	
+
+
+					
 	
 	
 	
@@ -403,5 +427,140 @@
 		</tbody>
 	</table>
 
+{{-- Team Table + Modal --}}
+<table class="table mt-3 mx-auto col-4">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col-2">Team Members</th>
+				<th>Image</th>
+				<th class="d-flex justify-content-end">
+					<button class="btn fa fa-plus d-flex bg-success text-white justify-content-end" data-toggle="modal"
+						data-target="#newTeam">
+						
+					</button>
+				</th>
+				<div class="modal fade" id="newTeam" tabindex="-1" role="dialog" aria-labelledby="newTeam"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="newTeam">Team Member</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form method="POST" action="/team" enctype="multipart/form-data">
+									{{ csrf_field() }}
+								<div class="modal-body">
+									<div class="form-group">
+									<label for="exampleFormControlFile1">Member Name</label>
+									<input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+								placeholder="Type Here!" required> 
+									</div>
+									<br>
+									<div class="form-group">
+										<label for="exampleFormControlFile1">Facebook Link</label>
+										<input type="text" name="link" class="form-control" id="exampleFormControlInput1"
+									placeholder="Type Here!" required> 
+										</div>
+										<br>
+								<div class="form-group">
+										<label for="exampleFormControlFile1">Upload an Image</label>
+										<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+									</div>
+								</div>
+
+								
+								<div class="modal-footer p-3">
+										<button type="button" class="btn btn-secondary bg-secondary" data-dismiss="modal">Close</button>
+										<button type="submit" name="new" class="btn btn-primary bg-success">Save changes</button>
+									</div>
+								
+									
+										
+										
+	
+									
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+	
+	
+			</tr>
+		</thead>
+		<tbody>
+	
+			@foreach ($team as $x)
+	
+			<tr>
+				<th scope="row">{{$x->id}}</th>
+				<td>{{$x->name}}</td>
+				<td style="line-height: 1px;">
+						<div style="width:50px; height:60px">
+							<img src="{{asset("storage/teamers/$x->name").'?'. time()}}" alt=""
+								style="width:100%; height:100%; object-fit:cover;">
+						</div>
+					</td>
+				<td class="justify-content-end d-flex">
+	
+					<p type="submit" class="fa fa-trash-o p-1 bg-danger"
+						style="width: 25px; height:25px;box-shadow: 0.5px 01px 1px black; text-decoration:none; color:black; text-align:center;"
+						data-toggle="modal" data-target="#deleteTeam{{$x->id}}"></p>
+	
+					<div class="modal fade" id="deleteTeam{{$x->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteTeam{{$x->id}}"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="deleteTeam{{$x->id}}">Do you want to delete "{{$x->name}}</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form method="POST" action="/team/{{$x->id}}">
+										{{method_field('DELETE')}}
+										{{ csrf_field() }}
+	
+										<button type="submit" name="delete" class="btn btn-primary bg-danger"
+											style="float:right; margin:0 0 0 5px;">Delete</button>
+										<button type="button" class="btn btn-secondary bg-secondary"
+											style="float:right; margin:0 0 0 5px;" data-dismiss="modal">Not sure</button>
+	
+									</form>
+								</div>
+	
+							</div>
+						</div>
+					</div>
+	
+
+
+					
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+				</td>
+			</tr>
+			@endforeach
+	
+	
+		</tbody>
+	</table>
 
 @endsection

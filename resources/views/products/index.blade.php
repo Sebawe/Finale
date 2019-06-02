@@ -73,7 +73,7 @@
 		}
 		.mycard {
 			box-shadow: 5px 10px 20px rgba(34, 35, 58, 0.2);
-			position: relative;
+			
 			transition: all 0.3s ease 0s !important;
 			top: 0;
 			right: 0;
@@ -121,17 +121,23 @@
 
 		<div class="row">
 
-			<div class="col-lg-3 col-md-12 col-xs-12">
+			<div class="col-lg-3 col-md-12 col-xs-12 filter-container">
 
 				<br>
 				<br>
 				<br>
-				<div class="list-group">
-					<a class="list-group-item" title="All" href="#"
-						onclick="filterSelection('all');return false;">All</a>
+				<div class="list-group myfilter">
+					<a class="list-group-item text-white mybgblue" data-filter="all">
+						All
+					</a>
 					@foreach ($category as $c)
-						<a class="list-group-item" title="{{$c->name}}" href="#"
-						onclick="filterSelection('{{strtolower($c->name)}}');return false;">{{$c->name}}</a>	
+						<a class="list-group-item" data-filter="{{strtolower($c->name)}}">{{$c->name}}</a>
+					@endforeach
+					<li class="list-group-item text-white mybgblue" data-filter="all">
+							Brands
+					</li>
+					@foreach ($brand as $c)
+						<a class="list-group-item" data-filter="{{strtolower($c->name)}}">{{$c->name}}</a>
 					@endforeach
 					
 				</div>
@@ -144,70 +150,35 @@
 				<div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel">
 					<div class="blog-slider">
 						<div class="blog-slider__wrp swiper-wrapper">
+							@foreach ($slider as $c)
 							<div class="blog-slider__item swiper-slide">
-								<div class="blog-slider__img">
-
-									<img src="img/works/51785916_2402705690016493_8102523758876557312_o.jpg" alt="">
+									<div class="blog-slider__img">
+	
+										<img src="{{Storage::url($c->id) .'?'. time()}}" alt="">
+									</div>
+									<div class="blog-slider__content">
+										<span class="blog-slider__code">26 December 2019</span>
+									<div class="blog-slider__title">{{$c->title}}</div>
+									<div class="blog-slider__text">{{$c->description}}</div>
+										<a href="#" class="blog-slider__button">READ MORE</a>
+									</div>
 								</div>
-								<div class="blog-slider__content">
-									<span class="blog-slider__code">26 December 2019</span>
-									<div class="blog-slider__title">Lorem Ipsum Dolor</div>
-									<div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing
-										elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-									<a href="#" class="blog-slider__button">READ MORE</a>
-								</div>
-							</div>
-							<div class="blog-slider__item swiper-slide">
-								<div class="blog-slider__img">
-									<img src="img/works/44198848_2321878194765910_2163770559123423232_o.jpg" alt="">
-								</div>
-								<div class="blog-slider__content">
-									<span class="blog-slider__code">26 December 2019</span>
-									<div class="blog-slider__title">Lorem Ipsum Dolor2</div>
-									<div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing
-										elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-									<a href="#" class="blog-slider__button">READ MORE</a>
-								</div>
-							</div>
-
-							<div class="blog-slider__item swiper-slide">
-								<div class="blog-slider__img">
-									<img src="img/works/desktop.jpg" alt="">
-								</div>
-								<div class="blog-slider__content">
-									<span class="blog-slider__code">26 December 2019</span>
-									<div class="blog-slider__title">Lorem Ipsum Dolor</div>
-									<div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing
-										elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-									<a href="#" class="blog-slider__button">READ MORE</a>
-								</div>
-							</div>
-
-							<div class="blog-slider__item swiper-slide">
-								<div class="blog-slider__img">
-									<img src="img/works/desktop.jpg" alt="">
-								</div>
-								<div class="blog-slider__content">
-									<span class="blog-slider__code">26 December 2019</span>
-									<div class="blog-slider__title">Lorem Ipsum Dolor</div>
-									<div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing
-										elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-									<a href="#" class="blog-slider__button">READ MORE</a>
-								</div>
-							</div>
+							@endforeach
+							
+							
 
 						</div>
 						<div class="blog-slider__pagination"></div>
 					</div>
 				</div>
-
-				<div class="row project-wrapper">
+				<div class="row filtr-container">
+				<div class="row">
 
 					@yield('stuff')
 
 
 				</div>
-
+			</div>
 
 
 			</div>
@@ -231,6 +202,7 @@
 	<script src="/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 	<script src="/js/wow.min.js"></script>
+	<script src="/js/jquery.filterizr.min.js"></script>
 	<script>
 		var swiper = new Swiper('.blog-slider', {
 			spaceBetween: 30,
@@ -249,53 +221,40 @@
 	</script>
 
 	<script>
-		filterSelection("all")
-
-		function filterSelection(c) {
-			var x, i;
-			x = document.getElementsByClassName("filterDiv");
-			if (c == "all") c = "";
-			for (i = 0; i < x.length; i++) {
-				w3RemoveClass(x[i], "show");
-				if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-			}
-		}
-
-		function w3AddClass(element, name) {
-			var i, arr1, arr2;
-			arr1 = element.className.split(" ");
-			arr2 = name.split(" ");
-			for (i = 0; i < arr2.length; i++) {
-				if (arr1.indexOf(arr2[i]) == -1) {
-					element.className += " " + arr2[i];
-				}
-			}
-		}
-
-		function w3RemoveClass(element, name) {
-			var i, arr1, arr2;
-			arr1 = element.className.split(" ");
-			arr2 = name.split(" ");
-			for (i = 0; i < arr2.length; i++) {
-				while (arr1.indexOf(arr2[i]) > -1) {
-					arr1.splice(arr1.indexOf(arr2[i]), 1);
-				}
-			}
-			element.className = arr1.join(" ");
-		}
-
-		// Add active class to the current button (highlight it)
-		var btnContainer = document.getElementById("myBtnContainer");
-		var btns = btnContainer.getElementsByClassName("btn");
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].addEventListener("click", function () {
-				var current = document.getElementsByClassName("active");
-				current[0].className = current[0].className.replace(" active", "");
-				this.className += " active";
-			});
-		}
-
+		
+		var options = {
+   animationDuration: 0.2, // in seconds
+   filter: 'all', // Initial filter
+   callbacks: { 
+      onFilteringStart: function() { },
+      onFilteringEnd: function() { },
+      onShufflingStart: function() { },
+      onShufflingEnd: function() { },
+      onSortingStart: function() { },
+      onSortingEnd: function() { }
+   },
+   controlsSelector: '', // Selector for custom controls
+   delay: 0, // Transition delay in ms
+   delayMode: 'progressive', // 'progressive' or 'alternate'
+   easing: 'ease-out',
+   filterOutCss: { // Filtering out animation
+      opacity: 0,
+      transform: 'scale(0.5)'
+   },
+   filterInCss: { // Filtering in animation
+      opacity: 0,
+      transform: 'scale(1)'
+   },
+   layout: 'sameSize', // See layouts
+   multifilterLogicalOperator: 'or',
+   selector: '.filtr-container',
+   setupControls: true // Should be false if controlsSelector is set 
+} 
+var filterizd = $('.filtr-container').filterizr(options);
+filterizd.filterizr('setOptions', options);
 	</script>
+
+	
 </body>
 
 </html>

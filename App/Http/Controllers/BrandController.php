@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Products;
-use App\Categories;
-class CategoryController extends Controller
+use App\Brands;
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,10 +36,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Categories();
-        $category->name = request('category');
-        $category->save();
-        
+        $brand = new Brands();
+        $brand->name = request('name');
+        $brand->file = request('file');
+        $brand->save();
+        if($request->hasFile('file')){
+            
+            $brand->file->storeAs('public/brands', $brand->name);
+            
+        }
         return redirect('admin');
     }
 
@@ -85,8 +90,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Categories::find($id)->delete();
-        DB::table('categories')->update(['id' => DB::raw('GREATEST(id - 1, 0)')]);
+        Brands::find($id)->delete();
+        DB::table('brands')->update(['id' => DB::raw('GREATEST(id - 1, 0)')]);
         return redirect('admin');
     }
 }

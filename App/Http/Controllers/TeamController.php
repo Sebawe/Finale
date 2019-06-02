@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Products;
-use App\Categories;
-class CategoryController extends Controller
+use App\Teamers;
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,11 +35,17 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $category = new Categories();
-        $category->name = request('category');
-        $category->save();
-        
+    {   
+        $team = new Teamers();
+        $team->name = request('name');
+        $team->link = request('link');
+        $team->file = request('file');
+        $team->save();
+        if($request->hasFile('file')){
+            
+            $team->file->storeAs('public/teamers', $team->name);
+            
+        }
         return redirect('admin');
     }
 
@@ -85,8 +91,19 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Categories::find($id)->delete();
-        DB::table('categories')->update(['id' => DB::raw('GREATEST(id - 1, 0)')]);
+        // $mytable = DB::table('teamers')->get();
+        // $mycurrent = DB::table('teamers')->find($id);
+        // $mylast = end($mytable);
+        
+        // if($mycurrent == $mylast)
+        // {
+        //     dd('what');
+        // }
+        Teamers::find($id)->delete();
+        DB::table('teamers')->update(['id' => DB::raw('GREATEST(id - 1, 0)')]);
+
         return redirect('admin');
+
+        
     }
 }

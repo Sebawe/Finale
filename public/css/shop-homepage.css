@@ -11,6 +11,10 @@
 .mygreen {
     color : var(--my-green) !important;
 }
+
+.mybgblue {
+    background-color : var(--my-blue) !important;
+}
 body {
     padding-top: 56px;
 }
@@ -441,7 +445,19 @@ body {
   position: relative;
 }
 
-
+.myfilter
+{
+    position: fixed !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    box-shadow: 5px 10px 20px rgba(34, 35, 58, 0.2);
+}
+.filter-container
+{
+    overflow: hidden !important;
+    
+    
+}
 /* Admin Page */
 .action-button {
     height: 50px !important;

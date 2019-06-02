@@ -2,9 +2,10 @@
 
 @section('stuff')
 
+
 @foreach ($product as $item)
-<div class="col-lg-4 col-md-6 mb-4 filterDiv {{strtolower($item->category)}}s" data-toggle="modal"
-data-target="#modal{{$item->id}}">
+<div class="col-lg-4 col-md-6 mb-4 filtr-item d-flex" data-category="{{strtolower($item->category)}}, {{strtolower($item->brand)}}" data-toggle="modal"
+data-target="#modal{{$item->id}}" style="padding: 15px">
 <div class="card mycard h-100">
     <a href="#" class="w-100" style="height:253px;overflow:hidden"><img class="card-img-top" src="{{Storage::url($item->id) .'?'. time()}}" alt=""></a>
     <div class="card-body">
@@ -33,8 +34,7 @@ aria-labelledby="aria{{$item->modal}}" aria-hidden="true">
         </div>
         <div class="modal-body">
             <div class="card">
-                <a href="#"><img class="card-img-top" src="{{Storage::url($item->id) .'?'. time()}}"
-                        alt=""></a>
+                <a href="#"><img class="card-img-top d-block mx-auto" src="{{Storage::url($item->id) .'?'. time()}}" style="width: 350px;"></a>
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="#">{{$item->title}}</a>

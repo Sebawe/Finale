@@ -3,9 +3,9 @@
 @section('mytable')
 
 
-<div class="container">
+<div class="container mb-5 mt-0">
 		<div class="col-xl-9 col-md-10 col-sm-11 col-xs-12 mx-auto">
-		<br>
+		
 			<h3 class="modal-title" id="edit">Edit an item</h3>
 			
 		
@@ -23,11 +23,18 @@
 					<label for="exampleFormControlSelect1">Category</label>
 					<select class="form-control" name="category" id="exampleFormControlSelect1">
 						@foreach ($category as $c)
-								<option>{{$c->name}}</option>
+								<option @if($product->category == $c->name) selected @endif  >{{$c->name}}</option>
 						@endforeach
 					</select>
 				</div>
-
+				<div class="form-group">
+						<label for="exampleFormControlSelect1">Brand</label>
+						<select class="form-control" name="brand" id="exampleFormControlSelect1">
+							@foreach ($brand as $c)
+								<option @if($product->brand == $c->name) selected @endif >{{$c->name}}</option>
+							@endforeach
+						</select>
+					</div>
 				<div class="form-group">
 					<label for="exampleFormControlTextarea1">Description</label>
 					<textarea class="form-control" name="description" id="exampleFormControlTextarea1" value="" rows="2">{{$product->description}}</textarea>
