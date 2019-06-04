@@ -52,6 +52,7 @@ body {
         max-width: 680px;
         height: 400px;
     }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -447,9 +448,7 @@ body {
 
 .myfilter
 {
-    position: fixed !important;
-    width: 100% !important;
-    max-width: 250px !important;
+   
     box-shadow: 5px 10px 20px rgba(34, 35, 58, 0.2);
 }
 .filter-container
@@ -458,6 +457,32 @@ body {
     
     
 }
+
+@media(min-width: 1200px)
+{
+    .myfilter
+    {
+        position: fixed !important;
+        width: 100% !important;
+        max-width: 250px !important;
+    }
+}
+
+@media(max-width: 992px)
+{
+    .filtr-container
+    {
+       margin: 0 !important;
+    }
+
+    .filtr-container > .row
+    {
+       margin: 0 !important;
+    }
+}
+
+
+
 /* Admin Page */
 .action-button {
     height: 50px !important;
